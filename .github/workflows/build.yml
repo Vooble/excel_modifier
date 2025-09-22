@@ -1,7 +1,7 @@
 name: Build EXE
 
 on:
-  workflow_dispatch:   # lo lanci a mano
+  workflow_dispatch:
 
 jobs:
   build:
@@ -20,7 +20,7 @@ jobs:
         run: |
           pyinstaller --onefile excel_modifier.py
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: excel-modifier-exe
           path: dist/excel_modifier.exe
